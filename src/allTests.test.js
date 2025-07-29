@@ -55,7 +55,17 @@ describe("Testing the calculator function", () => {
 })
 
 describe("Testing the caesarCipher function", () => {
+  test("Test wrapping", () => {
+    expect(caesarCipher("xyz", 3)).toBe("abc")
+  })
 
+  test("Test case preservation", () => {
+    expect(caesarCipher("HeLLo", 3)).toBe("KhOOr")
+  })
+
+  test("Test punctuation", () => {
+    expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!")
+  })
 })
 
 describe("Testing analyzeArray function", () => {
